@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Assignment 0</title>
+
+  </head>
+  <body>
+    <div class="container">
+		<div class="page-header">
+		<h3>Computation for Public Policy: Assignment 1</h3>
+		</div>
+
+	<div class="row">
+        <div class="col-md-12">
+        <ul>
+        <li>Assigned: Thursday, January 7, 2016</li>
+        <li>Due: By the beginning of the class on Thursday, January 14, 2016</li>
+        <li>Submit by email to: computationforpolicy@lists.uchicago.edu</li>
+        </ul>
+
+        <h3>Introduction</h3>
+
+        <p>In this assignment you will practice basic data manipulation and plotting using Python. We will use City of Chicago crime statistics from the open data portal as our data source. First, go to the data portal and view the crime statistics data available:</p> 
+
+<p><a href="https://data.cityofchicago.org/Public-Safety/Crimes-2001-to-present/ijzp-q8t2">https://data.cityofchicago.org/Public-Safety/Crimes-2001-to-present/ijzp-q8t2</a></p>
+
+<p>Since there’s quite a lot of data, for this assignment let’s filter down the data a bit so we have a more manageable dataset. </p>
+
+<p>Go to Filter and apply a Filter on the Date column to select crimes after 12/01/2015 12:00:00 AM. This should produce a dataset with ~18,000 crimes (approximate as the data may be updated as you do the assignment). Now, select Export, and download the data in ‘csv’ format, a text format where each field is separated by a comma.</p> 
+
+<p>Your solution will be a Python script that does the following basic computations. Use whichever modules you think are appropriate. Denote the solution to each part with a comment, e.g.:</p>
+
+<p><code># Part I: Question 1
+code goes here</code></p>
+
+<p>To get credit for your answer, you must show in full the code that produced the answer.</p> 
+
+<h3>Part I: Data Manipulation</h3>
+
+<p>Question 1: Write a piece of code that reads in the data to a format that you can use.</p>
+
+<p>Let’s now look at some descriptive statistics.</p>
+
+<p>Question 2: How often did a crime result in an arrest?</p> 
+
+<p>Question 3: Which types of crimes most often result in arrest?</p> 
+
+<p>Question 4: What are the number of weapons violations (one of the Primary Types) per district?</p>
+
+<p>Question 5: What are the number of arrests per days of the week? Which day of the week has the most arrests?</p>
+
+<h3>Part 2: Basic Plotting</h3>
+
+<p>In this part we’ll make a few plots to visualize the data.</p> 
+
+<p>Question 6: Make bar charts that show (a) the result of Question 4 and (b) Question 5.</p>
+
+<p>Question 7: Make a scatter plot of latitude versus longitude (we’ll get more into making real maps later in the course) for those crimes where the Primary Type was: deceptive pratice.</p>
+
+<p>Question 8: Make a histogram that shows the number of arrests per beat. The Y-axis should show Frequency and the X-axis should show the count of arrests in that beat.</p> 
+
+<p>Challenge 1 (ungraded): Make a timeseries plot of arrests per date in that month</p>
+
+        </div>
+      </div>
+        
+    </div> <!-- /container -->
+
+
+  </body>
+</html>
