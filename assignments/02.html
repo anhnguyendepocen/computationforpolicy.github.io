@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Assignment 2</title>
+
+  <style type="text/css">
+  <!--
+  .tab {margin-left: 40px; }
+  -->
+  </style>
+  </head>
+  <body>
+    <div class="container">
+		<div class="page-header">
+		<h3>Computation for Public Policy: Assignment 2</h3>
+		</div>
+
+	<div class="row">
+        <div class="col-md-12">
+        <ul>
+        <li>Assigned: Friday, January 22, 2016</li>
+        <li>Due: By beginning of class Tuesday, February 2, 2016</li>
+        <li>Submit via GitHub</li>
+        </ul>
+
+        <h3>Introduction</h3>
+
+        <p>In this assignment we will further explore the Chicago crime data. This time we will look at a larger portion of the data and augment our analysis by including data about socioeconomics, population, and police stations.</p> 
+
+<p>To get credit for your answer, you must show in full the code that produced the answer.</p> 
+<h3>Question 1: Crime counts and socioeconomics</h3>
+
+<p>Download the <a href="https://data.cityofchicago.org/Public-Safety/Crimes-2001-to-present/ijzp-q8t2">crime data</a> for <b>all of the year 2015</b>. Also download the <a href="https://data.cityofchicago.org/Health-Human-Services/Census-Data-Selected-socioeconomic-indicators-in-C/kn9c-c2s2">socioeconomic data</a>.</p>
+
+<p>(a) Calculate the number of crimes in each Community Area in 2015.</p> 
+
+<p>(b) Sort the Community Areas by 2015 crime count. Which Community Area (by name) has the highest crime count. The lowest?</p> 
+
+<p>(c) Create a table whose rows are days in the year and columns are the 77 Community Area crime counts. Select a few Communities that you are interested and plot time series.</p>
+
+<p>(d) By joining with the socioeconomic data, create a scatter plot of crime counts against per capita income. Summarize the relationship in words.</p>
+
+<h3>Question 2: Community Area populations</h3>
+
+<p>Download the <a href="https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Population-by-2010-Census-Block/5yjb-v3mj">census tract population data</a> and the <a href="https://github.com/computationforpolicy/lecture-examples/raw/master/community_tracts.csv">Community Area tracts mapping</a>.
+
+<p>(a) Merge these together.</p>
+<p>(b) Calculate the total population in each Community Area.</p>
+
+<h3>Question 3: Crime rates</h3>
+
+<p>Using your answer to (2), calculate the crime rate (defined as crime count per thousand capita) for the city in 2015. Then reanswer (1a-d) with crime <i>count</i> replaced by crime <i>rate</i>. Summarize your findings in words.</p>
+
+<h3>Question 4: Crime and Police Stations</h3>
+<p>Download the <a href="https://data.cityofchicago.org/Public-Safety/Police-Stations/z8bn-74gv">police stations data</a>.
+
+<p>(a) Extract the latitudes and longitudes of the police stations (found in the ADDRESS column) as floats into their own columns called 'Station Latitude' and 'Station Longitude', respectively.</p>
+
+<p>(b) Join the crime data with the stations on police district. Hint: the station district is a text field (because one of them is 'Headquarters') so you'll need to convert the crime district to the same.</p>
+
+<p>(c) Define a function which calculates the distance in kilometers between two points (latitude, longitude) using the Pythagorean theorem.<br><br>
+
+Hint: To convert the coordinate distance to kilometers multiply by 95. For example the distance from (41, -87) to (41.1,-87) is about 9.5km. This is the scale factor for these coorindates near Chicago. Note this method is approximate because the scale factor varies from point to point (i.e. the Earth is not flat!).</p>
+
+<p>(d) Calculate the distance between each crime and its district police station.
+
+Hint: 
+
+If your answer to (c) is of the form
+<code><p style="padding-left:5em; text-indent:-5em">def distance(row):<br>
+crime_lat = row['Latitude']<br>
+crime_lon = row['Longitude']<br>
+station_lat = row['Station Latitude']<br>
+station_lon = row['Station Longitude']<br>
+...</p>
+</code>
+
+Then you can simply do<br>
+<code>df.apply(distance, axis=1)</code></p>
+
+<p>(e) Plot a histogram of crime count against distance to district police station. Summarize the relationship in words.</p>
+
+        </div>
+      </div>
+        
+    </div> <!-- /container -->
+
+
+  </body>
+</html>
