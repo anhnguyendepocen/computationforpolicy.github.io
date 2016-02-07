@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Assignment 3</title>
+
+  <style type="text/css">
+  <!--
+  .tab {margin-left: 40px; }
+  -->
+  </style>
+  </head>
+  <body>
+    <div class="container">
+		<div class="page-header">
+		<h3>Computation for Public Policy: Assignment 3</h3>
+		</div>
+
+	<div class="row">
+        <div class="col-md-12">
+        <ul>
+        <li>Assigned: Friday, February 7, 2016</li>
+        <li>Due: By 5pm, February 15, 2016</li>
+        <li>Submit via GitHub</li>
+        </ul>
+
+        <h3>Introduction</h3>
+
+		<p>In this assignment you will use SQL to explore some large datasets from the Environmental Protection Agency's <a href="http://www.epa.gov/laws-regulations/summary-resource-conservation-and-recovery-act">Resource Conservation and Recovery Act programs</a>.</p> 
+
+<p>To get credit for your answer, you must show in full the code that produced the answer.</p> 
+
+
+<h3>Question 1: Handlers Exploration</h3>
+<p>The hhandlers table contains registration forms for hazardous waste handlers. See the data dictionary <a href="http://www3.epa.gov/epawaste/inforesources/data/br11/hhandler.pdf">here</a>.</p>
+
+<p>(a) How many forms have been received by the EPA? </p>
+
+<p>(b) How many facilities have registered? Hint: use the count(distinct <column>) function</p>
+
+<p>(c) How many forms were received per year over the last 5 years? </p>
+<p>Hint: Convert the receive_date to a date using ::date and use a GROUP BY.</p>
+
+<h3>Question 2: Evaluations</h3>
+<p>The cmecomp3 table contains a list of evaluations (inspections) of these handlers. See thedata dictionary <a href="https://rcrainfo.epa.gov/rcrainfo/help/technical/cir_cmecomp3_short.pdf">here</a>.</p>
+
+<p>(a) How many evaluations are there?</p>
+
+<p>(b) How many evaluations found violations?</p>
+
+<p>(c) What proportion of evaluations found violations?</p>
+
+<p>(d) Which five handler_ids have been found in violation the most times? How many times? Also find these handlers' site names in the hhandlers table.</p>
+<p>Hint: Use a GROUP BY and an ORDER BY <column> DESC.</p>
+
+<h3>Question 3: Industries</h3>
+<p>The North American Industry Classification System is a system used by federal agencies to classify a business according to its industry. The naics table contains this information as retrieved from <a href="https://www.census.gov/econ/cbp/download/NAICS2012.txt">here</a>. Start by skimming this file.</p>
+
+<p>(a) How many different naics codes are there? How many six-digit industry classifications are there? How many two-digit classifications are there? These determine the sectors as described <a href="http://www.bls.gov/sae/saewhatis.htm">here</a>.</p>
+
+<p>(b) The hnaics table contains naics codes for some handlers. How many handlers have naics codes? How many don't?</p>
+
+<p>(c) Join the hnaics table with the naics table and use a GROUP BY to determine which the number of facilities in each sector. Which sector has the most hazardous-waste handlers? The least?</p>
+<p>Hint: You can get the digit naics code from the naics_code using this expression: substring(naics_code for 2) || '----'</p>
+<p> Hint: group by naics_description to get the description instead of the code.</p>
+
+<p>(d) Create a temporary table called hsectors containing unique pairs of handler ids and sector descriptions.</p>
+<p>Hint: Use a GROUP BY to ensure only unique pairs.</p>
+<p>Note: We'll discuss creating temporary tables in class on Thursday.</p>
+
+<p>(e) Join hsectors to cmecomp3, to determine for each sector, the number of handlers evaluated, the number of evaluations and the proportion of evaluations finding violations. Which sector has the most violations? The highest proportion of evaluations finding violations?
+
+        </div>
+      </div>
+        
+    </div> <!-- /container -->
+
+
+  </body>
+</html>
