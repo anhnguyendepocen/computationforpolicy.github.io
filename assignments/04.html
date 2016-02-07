@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Assignment 4</title>
+
+  <style type="text/css">
+  <!--
+  .tab {margin-left: 40px; }
+  -->
+  </style>
+  </head>
+  <body>
+    <div class="container">
+		<div class="page-header">
+		<h3>Computation for Public Policy: Assignment 4</h3>
+		</div>
+
+	<div class="row">
+        <div class="col-md-12">
+        <ul>
+        <li>Assigned: Friday, February 12, 2016</li>
+        <li>Due: By the beginning of class Tuesday, February 23, 2016</li>
+        <li>Submit via GitHub</li>
+        </ul>
+
+        <h3>Web Scraping</h3>
+
+            <p>You’ll be scraping data from <a href="https://en.wikipedia.org/wiki/List_of_accidents_and_incidents_involving_commercial_aircraft">this website</a>, which contains a list of incidents involving commercial aircraft listed by year.</p>
+
+        <h5>Part a</h5>
+            <p>Write a scraper that will produce a pandas dataframe containing the following columns:<ul>
+            <li>When the accident occurred (year, month, and day - use a datetime object)</li>
+            <li>The short text description (everything to the right of the date)</li>
+            <li>The link to the detail page.</li></ul></p>
+
+        <h5>Part b</h5>
+            <p>Now write a code that clicks each link and scrapes additional content from the detailed page associated with each individual crash. <b>How will you ensure that you rate limit your requests to the target web server?</b> Once you have implemented this feature, scrape the content located in the right column of each details page and add it to the pandas dataframe:<ul>
+            <li>Number of passengers</li>
+            <li>Number of crew</li>
+            <li>Number of fatalities</li>
+            <li>Number of survivors</li>
+            <li>Registration</li>
+            <li>Flight origin</li>
+            <li>Destination</ul></p>
+
+        <h5>Part c</h5>
+
+            <p>Which were the top 5 most deadly aviation incidents? Report the number of fatalities and the flight origin for each.</p>
+
+        <h5>Part d</h5>
+
+            <p>Which flight origin has the highest number of aviation incidents in the last 25 years?</p>
+
+        <h5>Part e</h5>
+
+            <p>Save this Dataframe as JSON and commit to your repo, along with the notebook / python code used to do this assignment. </p>
+
+
+        </div>
+      </div>
+        
+    </div> <!-- /container -->
+
+
+  </body>
+</html>
