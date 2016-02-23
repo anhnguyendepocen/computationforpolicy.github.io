@@ -35,14 +35,16 @@
 
             <p>You’ll be scraping data from <a href="https://en.wikipedia.org/wiki/List_of_accidents_and_incidents_involving_commercial_aircraft">this website</a>, which contains a list of incidents involving commercial aircraft listed by year.</p>
 
-        <h5>Part a</h5>
+        <h5>Part a (Extra Credit)</h5>
             <p>Write a scraper that will produce a pandas dataframe containing the following columns:<ul>
             <li>When the accident occurred (year, month, and day - use a datetime object)</li>
             <li>The short text description (everything to the right of the date)</li>
             <li>The link to the detail page.</li></ul></p>
 
+            <p>If you choose not to do the extra credit assignment, you can start the assignment from <a href="crashes_no_extra_credit.csv">this csv file</a> which contains the description and the link for each page. Read this csv file into a pandas DataFrame as a starting point for part b.</p>
+
         <h5>Part b</h5>
-            <p>Now write a code that clicks each link and scrapes additional content from the detailed page associated with each individual crash. <b>How will you ensure that you rate limit your requests to the target web server?</b> Once you have implemented this feature, scrape the content located in the right column of each details page and add it to the pandas dataframe:<ul>
+            <p>Now write a code that clicks each link and scrapes additional content from the detailed page associated with each individual crash. <b>How will you ensure that you rate limit your requests to the target web server?</b> Once you have implemented this feature, scrape the content located in the right column of each details page and put it in a DataFrame:<ul>
             <li>Number of passengers</li>
             <li>Number of crew</li>
             <li>Number of fatalities</li>
@@ -50,6 +52,7 @@
             <li>Registration</li>
             <li>Flight origin</li>
             <li>Destination</ul></p>
+            <p>If there are multiple responses for passengers, just save the first one for simplicity. Similarly if there are not entries (e.g. for registration in the first link) then you can simply fill that entry in the DataFrame with 'No data'.</p>
 
         <h5>Part c</h5>
 
