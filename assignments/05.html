@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Assignment 4</title>
+
+  <style type="text/css">
+  <!--
+  .tab {margin-left: 40px; }
+  -->
+  </style>
+  </head>
+  <body>
+    <div class="container">
+		<div class="page-header">
+		<h3>Computation for Public Policy: Assignment 5</h3>
+		</div>
+
+	<div class="row">
+        <div class="col-md-12">
+        <ul>
+        <li>Assigned: Sunday, February 28, 2016</li>
+        <li>Due: By the beginning of class Thursday, March 8, 2016</li>
+        <li>Submit via GitHub</li>
+        </ul>
+
+        <h3>Building Violations</h3>
+
+        <p>Export the building violations data from 2016 thus far as CSV from the data portal:</p>
+        <p><a href="https://data.cityofchicago.org/Buildings/Building-Violations/22u3-xenr">https://data.cityofchicago.org/Buildings/Building-Violations/22u3-xenr</a></p>
+        
+        <p>Also download the community areas shapefile:</p>
+        <p><a href="https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Boundaries-Community-Areas-current-/cauq-8yn6">https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Boundaries-Community-Areas-current-/cauq-8yn6</a></p>
+        
+        <p>(Click Export... then click Shapefile)<p>
+
+        <p>Finally, download the nltk in python by running:</p>
+
+        <p><code>import nltk<br>
+nltk.download()</code></p>
+
+        <p>and then download the “stopwords” package from the All Packages tab.</p>
+
+<h5>1a</h5> <p>Using QGIS, generate a heatmap of building violations overlaid on the community areas. Save the map as an image (Project > Save as Image) and include it in your solution repository.</p>
+
+<p>Open the building violations data in python. The “VIOLATION INSPECTOR COMMENTS” field contains (uppercase!) free text describing each building violation.</p>
+
+<h5>1b</h5> <p>Concatenate the non null inspector comments into one string.</p>
+
+<h5>1c</h5> <p>Remove punctuation.</p>
+
+<h5>1d</h5> <p>Tokenize the inspector comments.</p>
+
+<h5>1e</h5> <p>Remove stopwords.</p>
+
+<h5>1f</h5> <p>Apply the Porter stemmer.</p>
+
+<h5>1g</h5> <p>What are the ten most common terms in the building violation inspector comments (after the above transformations)?</p>
+
+<h3>Introduction to Flask</h3>
+
+<p>We will use the web interface to a pandas DataFrame we’ve been developing in class from the last lecture as a starting point:</p> 
+
+<p><a href="https://github.com/computationforpolicy/lecture-examples/tree/master/webapp">https://github.com/computationforpolicy/lecture-examples/tree/master/webapp</a></p>
+
+<p>We’ll examine this web app and then add a new page.</p> 
+
+<h5>2a</h5><p> Recall from lecture that the code for our web application is stored in dfdisplay.py. Note that config.py contains the path to the CSV we’d like to display. The code in dfdisplay.py takes a CSV file and renders it as an HTML page:</p>
+
+<p><code>@app.route('/')<br>
+    def load_dataframe():<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;return render_template('dataframe.html', data=df.to_dict(), cols=cols, nrows=len(df))</code></p>
+
+<p>Try to run the application from the command line:</p>
+
+<p><code>$ python dfdisplay.py</code></p>
+
+<p>On the command line, it will produce output beginning with “ * Running on …”. </p>
+
+<p>In a web browser, go to the address that is produced in the output (should be an ip:port tuple like 127.0.0.1:5000). As your web browser submits HTTP GET requests, the server running on the command line should log each one and produce output to the command line. <b>Paste one of the lines of output you get in your response.</b></p> 
+
+<h5>2b</h5> <p>Look at templates/dataframe.html. We can run some code between <code>{{</code> and <code>}}</code> and <code>{%</code> and <code>%}</code>. This code is then processed by the Jinja2 template engine that Flask uses. Note that not all Python expressions are supported by the Jinja2 template engine. <b>What syntax differences do you notice in the code in the template and regular Python?</b> </p>
+
+<h5>2c</h5> <p>We want to add a link that will take us to an “About” page.
+Add a new route in the Python code dfdisplay.py to accomplish this. Write a code stanza that routes ‘/about’ to the template about.html that exists in the templates/ directory. You should render this template and pass a string name that contains your name. Check that it works and that both pages render correctly. Copy this working webapp directory to your repo and commit. 
+</p>
+
+        </div>
+      </div>
+    </div> <!-- /container -->
+
+  </body>
+</html>
